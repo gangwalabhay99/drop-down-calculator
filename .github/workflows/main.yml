@@ -12,7 +12,7 @@ on:
         - '+'
         - '*'
       title:
-      type: input.text
+      type: text
       label: Title
 jobs:
   build:
