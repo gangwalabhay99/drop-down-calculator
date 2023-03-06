@@ -11,9 +11,7 @@ on:
         - '-'
         - '+'
         - '*'
-      title:
-      type: text
-      label: Title
+
 jobs:
   build:
     runs-on: windows-latest
