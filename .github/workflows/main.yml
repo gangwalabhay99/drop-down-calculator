@@ -13,13 +13,11 @@ on:
         - '*'
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Calculator
         run: | 
-          print ("choice is ${{ inputs.choice }}" / ${{ inputs.choice }})
-          print(2+4)
-        shell: python
+          2+4
