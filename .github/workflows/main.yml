@@ -11,6 +11,9 @@ on:
         - '-'
         - '+'
         - '*'
+      title:
+      type: input.text
+      label: Title
 jobs:
   build:
     runs-on: windows-latest
