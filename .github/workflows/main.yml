@@ -3,18 +3,21 @@ name: CI
 on:
   workflow_dispatch:
     inputs:
+      
+      number1:
+        description: enter first number
+        #input has to be provide for the workflow to run
+        required: true
+        
       choice:
         type: choice
-        description: Make a choice
+        description: select the operator
         options:
         - '/'
         - '-'
         - '+'
         - '*'
-      number1:
-        description: enter first number
-        #input has to be provide for the workflow to run
-        required: true
+        
       number2:
         description: enter second number
         #input has to be provide for the workflow to run
