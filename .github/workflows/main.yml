@@ -20,6 +20,6 @@ jobs:
 
       - name: Calculator
         run: | 
-          print "choice is ${{ inputs.choice }}" / ${{ inputs.choice }}
+          print ("choice is ${{ inputs.choice }}" / ${{ inputs.choice }})
           print(2+4)
         shell: python
