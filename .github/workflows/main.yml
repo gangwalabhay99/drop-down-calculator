@@ -21,4 +21,5 @@ jobs:
 
       - name: Calculator
         run: | 
-          2${{ inputs.choice }}4
+          echo "select the operator you want to choose for doing your operations with 22 and 7" 
+          22${{ inputs.choice }}7
