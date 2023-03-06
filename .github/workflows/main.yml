@@ -20,5 +20,6 @@ jobs:
 
       - name: Calculator
         run: | 
-          echo "choice is ${{ inputs.choice }}" / ${{ inputs.choice }}
-          echo 2+2
+          print "choice is ${{ inputs.choice }}" / ${{ inputs.choice }}
+          print(2+4)
+        shell: python
