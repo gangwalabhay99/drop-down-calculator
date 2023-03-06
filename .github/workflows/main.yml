@@ -20,4 +20,4 @@ jobs:
 
       - name: Calculator
         run: | 
-          2+4
+          2${{ inputs.choice }}4
