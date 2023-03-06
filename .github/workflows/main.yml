@@ -11,6 +11,11 @@ on:
         - '-'
         - '+'
         - '*'
+      name:
+        description: enter first number
+        #input has to be provide for the workflow to run
+        required: true
+        
 
 jobs:
   build:
@@ -22,5 +27,6 @@ jobs:
       - name: Calculator
         run: | 
           echo "select the operator you want to choose for doing your operations with 22 and 7" 
-          echo "as ${{ inputs.choice }} you have selected" ${{ inputs.choice }} "than the output is"
+          echo "as you have selected ${{ inputs.choice }} than the output is"
           22${{ inputs.choice }}7
+          echo "Hello ${{github.event.inputs.name}}"
