@@ -1,17 +1,18 @@
 name: calculator
-
-inputs:
-  - name: num1
-    type: number
-  - name: num2
-    type: number
-  - name: operator
-    type: string
-    options:
-      - "+"
-      - "-"
-      - "*"
-      - "/"
+on:
+  workflow_dispatch:
+      inputs:
+        - name: num1
+          type: number
+        - name: num2
+          type: number
+        - name: operator
+          type: string
+          options:
+            - "+"
+            - "-"
+            - "*"
+            - "/"
 
 jobs:
   calculate:
