@@ -2,11 +2,13 @@ name: calculator
 on:
   workflow_dispatch:
       inputs:
-        - name: num1
+        num1:
           type: number
-        - name: num2
+
+        num2:
           type: number
-        - name: operator
+
+        operator:
           type: string
           options:
             - "+"
