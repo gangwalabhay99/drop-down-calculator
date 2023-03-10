@@ -1,0 +1,41 @@
+name: calculator
+
+inputs:
+  - name: num1
+    type: number
+  - name: num2
+    type: number
+  - name: operator
+    type: string
+    options:
+      - "+"
+      - "-"
+      - "*"
+      - "/"
+
+jobs:
+  calculate:
+    steps:
+      - name: perform-calculation
+        image: python:3.9
+        command: [sh, -c]
+        args: ["echo 'result=$(python -c \"print(${{inputs.num1}} ${inputs.operator} ${{inputs.num2}})\")' > /mnt/outputs/env.sh"]
+        volumeMounts:
+          - name: outputs
+            mountPath: /mnt/outputs
+    outputs:
+      - name: result
+        type: string
+        path: /mnt/outputs/env.sh
+
+  display:
+    needs: [calculate]
+    inputs:
+      - name: result
+        type: string
+        from: calculate.outputs.result
+    steps:
+      - name: display-result
+        image: alpine:3.10
+        command: [sh, -c]
+        args: ["echo 'The result of ${{inputs.num1}} ${{inputs.operator}} ${{inputs.num2}} is ${{inputs.result}}.'"]
