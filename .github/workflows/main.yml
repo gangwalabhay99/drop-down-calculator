@@ -24,7 +24,7 @@ on:
         required: true
 
 jobs:
-  build:
+  calculate:
     runs-on: windows-latest
 
     steps:
@@ -32,5 +32,14 @@ jobs:
 
       - name: Calculator
         run: | 
-          ${{github.event.inputs.number1}}${{ inputs.choice }}${{github.event.inputs.number2}}
+          $result = ${{github.event.inputs.number1}}${{ inputs.choice }}${{github.event.inputs.number2}}
 
+  display:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: display of result
+        run: |
+          echo $result
